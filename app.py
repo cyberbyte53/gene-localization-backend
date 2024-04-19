@@ -24,6 +24,7 @@ def process_data():
         cache = {}
 
     for gene in genes:
+        ans_gene = 0
         try:
             if gene in cache:
                 prot_seq = cache[gene]
@@ -36,7 +37,8 @@ def process_data():
         if prot_seq is not None:
             print(f"Processing gene: {gene}", " sequence:", prot_seq)
             if localization_signal in prot_seq:
-                result.append(gene)
+                ans_gene = 1
+        result.append(ans_gene)
     print("Result:", result)
     # Save cache.json
     with open("cache.json", "w") as file:
@@ -45,4 +47,4 @@ def process_data():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
