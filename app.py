@@ -40,7 +40,7 @@ def process_data():
             print(f"Processing gene: {gene}", " sequence:", prot_seq)
             if localization_signal in prot_seq:
                 ans_gene = 1
-        result.append(ans_gene)
+        result.append({"name": gene, "selected": ans_gene})
     print("Result:", result)
     # Save cache.json
     with open("cache.json", "w") as file:
