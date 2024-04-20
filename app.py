@@ -13,7 +13,7 @@ def process_data():
     # Getting data from the POST request
     data = request.get_json()
 
-    localization_signal = data.get("localization_signal", "")
+    localization_signal = data.get("localization_signal", "").upper()
     genes = data.get("genes", [])
     print("localization signal:", localization_signal)
 
